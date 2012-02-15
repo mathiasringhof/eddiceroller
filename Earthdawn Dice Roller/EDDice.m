@@ -13,7 +13,7 @@
 
 @synthesize noOfSides = _noOfSides, penalty = _penalty, delegate = _delegate;
 
-- (EDDice*) initWithNoOfSides: (NSUInteger) noOfSides
+- (EDDice*) initWithNoOfSides: (NSInteger) noOfSides
 {
     self = [super init];
     if (self) {
@@ -23,8 +23,8 @@
     return self;
 }
 
-- (EDDice*) initWithNoOfSides: (NSUInteger) noOfSides 
-                      penalty: (NSUInteger) penalty
+- (EDDice*) initWithNoOfSides: (NSInteger) noOfSides 
+                      penalty: (NSInteger) penalty
 {
     self = [super init];
     if (self) {
@@ -36,7 +36,7 @@
 
 - (EDDiceResult*) roll
 {
-    NSUInteger resultValue = 0;
+    NSInteger resultValue = 0;
     NSInteger randomValue = 0;
     do {
         if (self.delegate) {

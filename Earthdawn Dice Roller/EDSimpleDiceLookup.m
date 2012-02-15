@@ -12,7 +12,7 @@
 
 @implementation EDSimpleDiceLookup
 
-- (NSArray*) diceForStep: (NSUInteger) step 
+- (NSArray*) diceForStep: (NSInteger) step 
                withKarma: (BOOL) karma
 {
     NSDictionary* lookup = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -31,7 +31,7 @@
     return result;
 }
 
-- (NSArray*) diceForStep: (NSUInteger) step
+- (NSArray*) diceForStep: (NSInteger) step
 {
     return [self diceForStep:step withKarma:NO];
 }

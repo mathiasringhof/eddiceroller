@@ -10,7 +10,7 @@
 
 typedef NSInteger (^RandomNumberBlock)();
 #define DICES_TO_TEST_FOR_AS_NUMBER_ARRAY [NSArray arrayWithObjects:[NSNumber numberWithInt:6], [NSNumber numberWithInt:8], [NSNumber numberWithInt:10], [NSNumber numberWithInt:12], [NSNumber numberWithInt:20], nil]
-#define MAX_PENALTY_TO_TEST_FOR 2
+#define MAX_PENALTY_TO_TEST_FOR 3
 
 @interface EDDiceTests()
 @property (strong, nonatomic) RandomNumberBlock block;
@@ -22,6 +22,7 @@ typedef NSInteger (^RandomNumberBlock)();
 
 @synthesize block = _block;
 
+#pragma mark Setup and teardown
 - (void)setUp
 {
     [super setUp];
@@ -32,6 +33,7 @@ typedef NSInteger (^RandomNumberBlock)();
     [super tearDown];
 }
 
+#pragma mark Tests
 - (void)testRoll
 {
     for (NSInteger i = 0; i <= MAX_PENALTY_TO_TEST_FOR; i++) {
@@ -47,6 +49,8 @@ typedef NSInteger (^RandomNumberBlock)();
     STAssertTrue([diceWithPenalty.description isEqualToString: @"D6 - 3"], @"Description w/ penalty is not working. Expected D6 - 3, got %@", diceWithPenalty.description);
 }
 
+
+// tests all defined dices w/ values from 1 to 50 by mocking the random number generator
 - (void)doTestRollWithPenalty: (NSUInteger) penalty
 {
     for (NSNumber* diceSides in DICES_TO_TEST_FOR_AS_NUMBER_ARRAY) {
@@ -75,6 +79,7 @@ typedef NSInteger (^RandomNumberBlock)();
     
 }
 
+#pragma mark EDRandomNumberGeneratorDelegate
 - (NSInteger) generateRandomNumberFrom: (NSInteger)lowerBound to: (NSInteger) upperBound
 {
     return self.block();

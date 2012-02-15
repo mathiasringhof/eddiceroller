@@ -10,9 +10,9 @@
 
 @protocol EDDiceLookup <NSObject>
 @optional
-- (NSArray*) diceForStep: (NSUInteger) step;
+- (NSArray*) diceForStep: (NSInteger) step;
 @required
-- (NSArray*) diceForStep: (NSUInteger) step 
+- (NSArray*) diceForStep: (NSInteger) step 
                withKarma: (BOOL) karma;
 
 @end
