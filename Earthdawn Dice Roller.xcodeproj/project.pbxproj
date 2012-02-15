@@ -20,6 +20,8 @@
 		526A024414EB98E400CCCE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022514EB98E400CCCE48 /* Foundation.framework */; };
 		526A024C14EB98E400CCCE48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 526A024A14EB98E400CCCE48 /* InfoPlist.strings */; };
 		526A024F14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A024E14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m */; };
+		526A025A14EB98FD00CCCE48 /* EDDice.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A025914EB98FD00CCCE48 /* EDDice.m */; };
+		526A025D14EB99C500CCCE48 /* EDDiceResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A025C14EB99C500CCCE48 /* EDDiceResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +39,25 @@
 		526A022314EB98E400CCCE48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		526A022514EB98E400CCCE48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		526A022714EB98E400CCCE48 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		526A022B14EB98E400CCCE48 /* Earthdawn Dice Roller-Info.plist */ = {isa = PBXFileReference; path = "Earthdawn Dice Roller-Info.plist"; sourceTree = "<group>"; };
+		526A022B14EB98E400CCCE48 /* Earthdawn Dice Roller-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Earthdawn Dice Roller-Info.plist"; sourceTree = "<group>"; };
 		526A022D14EB98E400CCCE48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		526A022F14EB98E400CCCE48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		526A023114EB98E400CCCE48 /* Earthdawn Dice Roller-Prefix.pch */ = {isa = PBXFileReference; path = "Earthdawn Dice Roller-Prefix.pch"; sourceTree = "<group>"; };
-		526A023214EB98E400CCCE48 /* EDAppDelegate.h */ = {isa = PBXFileReference; path = EDAppDelegate.h; sourceTree = "<group>"; };
+		526A023114EB98E400CCCE48 /* Earthdawn Dice Roller-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Earthdawn Dice Roller-Prefix.pch"; sourceTree = "<group>"; };
+		526A023214EB98E400CCCE48 /* EDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAppDelegate.h; sourceTree = "<group>"; };
 		526A023314EB98E400CCCE48 /* EDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDAppDelegate.m; sourceTree = "<group>"; };
 		526A023614EB98E400CCCE48 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		526A023814EB98E400CCCE48 /* EDViewController.h */ = {isa = PBXFileReference; path = EDViewController.h; sourceTree = "<group>"; };
+		526A023814EB98E400CCCE48 /* EDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDViewController.h; sourceTree = "<group>"; };
 		526A023914EB98E400CCCE48 /* EDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDViewController.m; sourceTree = "<group>"; };
 		526A024014EB98E400CCCE48 /* Earthdawn Dice RollerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Earthdawn Dice RollerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526A024114EB98E400CCCE48 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		526A024914EB98E400CCCE48 /* Earthdawn Dice RollerTests-Info.plist */ = {isa = PBXFileReference; path = "Earthdawn Dice RollerTests-Info.plist"; sourceTree = "<group>"; };
+		526A024914EB98E400CCCE48 /* Earthdawn Dice RollerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Earthdawn Dice RollerTests-Info.plist"; sourceTree = "<group>"; };
 		526A024B14EB98E400CCCE48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		526A024D14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.h */ = {isa = PBXFileReference; path = Earthdawn_Dice_RollerTests.h; sourceTree = "<group>"; };
+		526A024D14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Earthdawn_Dice_RollerTests.h; sourceTree = "<group>"; };
 		526A024E14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Earthdawn_Dice_RollerTests.m; sourceTree = "<group>"; };
+		526A025814EB98FD00CCCE48 /* EDDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDice.h; sourceTree = "<group>"; };
+		526A025914EB98FD00CCCE48 /* EDDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDDice.m; sourceTree = "<group>"; };
+		526A025B14EB99C500CCCE48 /* EDDiceResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDiceResult.h; sourceTree = "<group>"; };
+		526A025C14EB99C500CCCE48 /* EDDiceResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDDiceResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				526A023814EB98E400CCCE48 /* EDViewController.h */,
 				526A023914EB98E400CCCE48 /* EDViewController.m */,
 				526A022A14EB98E400CCCE48 /* Supporting Files */,
+				526A025814EB98FD00CCCE48 /* EDDice.h */,
+				526A025914EB98FD00CCCE48 /* EDDice.m */,
+				526A025B14EB99C500CCCE48 /* EDDiceResult.h */,
+				526A025C14EB99C500CCCE48 /* EDDiceResult.m */,
 			);
 			path = "Earthdawn Dice Roller";
 			sourceTree = "<group>";
@@ -260,6 +270,8 @@
 				526A023014EB98E400CCCE48 /* main.m in Sources */,
 				526A023414EB98E400CCCE48 /* EDAppDelegate.m in Sources */,
 				526A023A14EB98E400CCCE48 /* EDViewController.m in Sources */,
+				526A025A14EB98FD00CCCE48 /* EDDice.m in Sources */,
+				526A025D14EB99C500CCCE48 /* EDDiceResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
