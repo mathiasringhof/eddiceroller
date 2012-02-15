@@ -9,6 +9,7 @@
 #import "EDViewController.h"
 
 @implementation EDViewController
+@synthesize resultLabel = _resultLabel, diceLookup = _diceLookup;
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,6 +27,7 @@
 
 - (void)viewDidUnload
 {
+    [self setResultLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -57,4 +59,10 @@
     return YES;
 }
 
+- (IBAction)throwDiceButtonPressed:(id)sender {
+    NSArray* dices = [self.diceLookup diceForStep:1];
+    for (EDDice* dice in dices) {
+        
+    }
+}
 @end

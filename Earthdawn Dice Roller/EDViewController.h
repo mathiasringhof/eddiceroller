@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EDDiceLookup.h"
+#import "EDDiceResult.h"
+#import "EDDice.h"
 
 @interface EDViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (strong, nonatomic) id<EDDiceLookup> diceLookup;
 
+- (IBAction)throwDiceButtonPressed:(id)sender;
 @end

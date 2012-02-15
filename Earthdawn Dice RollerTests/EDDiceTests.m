@@ -49,6 +49,14 @@ typedef NSInteger (^RandomNumberBlock)();
     STAssertTrue([diceWithPenalty.description isEqualToString: @"D6 - 3"], @"Description w/ penalty is not working. Expected D6 - 3, got %@", diceWithPenalty.description);
 }
 
+- (void)testDescriptionWithClassMethods
+{
+    EDDice* dice = [EDDice diceWithNoOfSides:12];
+    STAssertTrue([dice.description isEqualToString: @"D12"], @"Description w/o penalty is not working. Expected D12, got %@", dice.description);
+    EDDice* diceWithPenalty = [EDDice diceWithNoOfSides:6 penalty:3];
+    STAssertTrue([diceWithPenalty.description isEqualToString: @"D6 - 3"], @"Description w/ penalty is not working. Expected D6 - 3, got %@", diceWithPenalty.description);
+}
+
 
 // tests all defined dices w/ values from 1 to 50 by mocking the random number generator
 - (void)doTestRollWithPenalty: (NSUInteger) penalty
