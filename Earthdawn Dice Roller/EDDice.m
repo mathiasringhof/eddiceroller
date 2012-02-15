@@ -11,13 +11,25 @@
 
 @implementation EDDice
 
-@synthesize noOfSides = _noOfSides, delegate = _delegate;
+@synthesize noOfSides = _noOfSides, penalty = _penalty, delegate = _delegate;
 
 - (EDDice*) initWithNoOfSides: (NSUInteger) noOfSides
 {
     self = [super init];
     if (self) {
         self.noOfSides = noOfSides;        
+        self.penalty = 0;
+    }
+    return self;
+}
+
+- (EDDice*) initWithNoOfSides: (NSUInteger) noOfSides 
+                      penalty: (NSUInteger) penalty
+{
+    self = [super init];
+    if (self) {
+        self.noOfSides = noOfSides;     
+        self.penalty = penalty;
     }
     return self;
 }
@@ -34,7 +46,17 @@
         }
         resultValue = resultValue + randomValue;
     } while (randomValue == self.noOfSides);
+    resultValue = resultValue - self.penalty;
+    if (resultValue < 1) resultValue = 1;
     return [[EDDiceResult alloc] initWithResultValue:resultValue fromDice:self];
+}
+
+- (NSString*) description
+{
+    if (self.penalty > 0)
+        return [NSString stringWithFormat:@"D%d - %d", self.noOfSides, self.penalty];
+    else
+        return [NSString stringWithFormat:@"D%d", self.noOfSides];
 }
 
 @end
