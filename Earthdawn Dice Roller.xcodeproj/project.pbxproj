@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5243DD0B14EBB38800CD0176 /* EDDiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243DD0A14EBB38800CD0176 /* EDDiceTests.m */; };
 		526A022414EB98E400CCCE48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022314EB98E400CCCE48 /* UIKit.framework */; };
 		526A022614EB98E400CCCE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022514EB98E400CCCE48 /* Foundation.framework */; };
 		526A022814EB98E400CCCE48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022714EB98E400CCCE48 /* CoreGraphics.framework */; };
@@ -19,7 +20,6 @@
 		526A024314EB98E400CCCE48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022314EB98E400CCCE48 /* UIKit.framework */; };
 		526A024414EB98E400CCCE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022514EB98E400CCCE48 /* Foundation.framework */; };
 		526A024C14EB98E400CCCE48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 526A024A14EB98E400CCCE48 /* InfoPlist.strings */; };
-		526A024F14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A024E14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m */; };
 		526A025A14EB98FD00CCCE48 /* EDDice.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A025914EB98FD00CCCE48 /* EDDice.m */; };
 		526A025D14EB99C500CCCE48 /* EDDiceResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A025C14EB99C500CCCE48 /* EDDiceResult.m */; };
 /* End PBXBuildFile section */
@@ -36,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		5243DD0614EBADE200CD0176 /* EDRandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDRandomNumberGenerator.h; sourceTree = "<group>"; };
+		5243DD0914EBB38800CD0176 /* EDDiceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDiceTests.h; sourceTree = "<group>"; };
+		5243DD0A14EBB38800CD0176 /* EDDiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDDiceTests.m; sourceTree = "<group>"; };
 		526A021F14EB98E400CCCE48 /* Earthdawn Dice Roller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Earthdawn Dice Roller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526A022314EB98E400CCCE48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		526A022514EB98E400CCCE48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,8 +55,6 @@
 		526A024114EB98E400CCCE48 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		526A024914EB98E400CCCE48 /* Earthdawn Dice RollerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Earthdawn Dice RollerTests-Info.plist"; sourceTree = "<group>"; };
 		526A024B14EB98E400CCCE48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		526A024D14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Earthdawn_Dice_RollerTests.h; sourceTree = "<group>"; };
-		526A024E14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Earthdawn_Dice_RollerTests.m; sourceTree = "<group>"; };
 		526A025814EB98FD00CCCE48 /* EDDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDice.h; sourceTree = "<group>"; };
 		526A025914EB98FD00CCCE48 /* EDDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDDice.m; sourceTree = "<group>"; };
 		526A025B14EB99C500CCCE48 /* EDDiceResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDiceResult.h; sourceTree = "<group>"; };
@@ -85,6 +85,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5243DD0814EBB36500CD0176 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				526A025814EB98FD00CCCE48 /* EDDice.h */,
+				526A025914EB98FD00CCCE48 /* EDDice.m */,
+				526A025B14EB99C500CCCE48 /* EDDiceResult.h */,
+				526A025C14EB99C500CCCE48 /* EDDiceResult.m */,
+				5243DD0614EBADE200CD0176 /* EDRandomNumberGenerator.h */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
 		526A021414EB98E400CCCE48 = {
 			isa = PBXGroup;
 			children = (
@@ -124,11 +136,7 @@
 				526A023814EB98E400CCCE48 /* EDViewController.h */,
 				526A023914EB98E400CCCE48 /* EDViewController.m */,
 				526A022A14EB98E400CCCE48 /* Supporting Files */,
-				526A025814EB98FD00CCCE48 /* EDDice.h */,
-				526A025914EB98FD00CCCE48 /* EDDice.m */,
-				526A025B14EB99C500CCCE48 /* EDDiceResult.h */,
-				526A025C14EB99C500CCCE48 /* EDDiceResult.m */,
-				5243DD0614EBADE200CD0176 /* EDRandomNumberGenerator.h */,
+				5243DD0814EBB36500CD0176 /* Domain */,
 			);
 			path = "Earthdawn Dice Roller";
 			sourceTree = "<group>";
@@ -147,9 +155,9 @@
 		526A024714EB98E400CCCE48 /* Earthdawn Dice RollerTests */ = {
 			isa = PBXGroup;
 			children = (
-				526A024D14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.h */,
-				526A024E14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m */,
 				526A024814EB98E400CCCE48 /* Supporting Files */,
+				5243DD0914EBB38800CD0176 /* EDDiceTests.h */,
+				5243DD0A14EBB38800CD0176 /* EDDiceTests.m */,
 			);
 			path = "Earthdawn Dice RollerTests";
 			sourceTree = "<group>";
@@ -281,7 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526A024F14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m in Sources */,
+				5243DD0B14EBB38800CD0176 /* EDDiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

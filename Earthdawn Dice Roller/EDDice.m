@@ -11,7 +11,7 @@
 
 @implementation EDDice
 
-@synthesize noOfSides = _noOfSides, randomNumberGenerator = _randomNumberGenerator;
+@synthesize noOfSides = _noOfSides, delegate = _delegate;
 
 - (EDDice*) initWithNoOfSides: (NSUInteger) noOfSides
 {
@@ -24,11 +24,11 @@
 
 - (EDDiceResult*) roll
 {
-    NSUInteger resultValue;
-    NSInteger randomValue;
+    NSUInteger resultValue = 0;
+    NSInteger randomValue = 0;
     do {
-        if (self.randomNumberGenerator) {
-            randomValue = [self.randomNumberGenerator generateRandomNumberFrom:1 to:self.noOfSides];
+        if (self.delegate) {
+            randomValue = [self.delegate generateRandomNumberFrom:1 to:self.noOfSides];
         } else {
             randomValue = (arc4random() % self.noOfSides) + 1;
         }

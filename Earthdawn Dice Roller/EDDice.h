@@ -13,10 +13,9 @@
 @interface EDDice : NSObject
 
 @property NSUInteger noOfSides;
-@property (strong, nonatomic) id<EDRandomNumberGeneratorDelegate> randomNumberGenerator;
+@property (strong, nonatomic) id<EDRandomNumberGeneratorDelegate> delegate;
 
 - (EDDice*) initWithNoOfSides: (NSUInteger) noOfSides;
 - (EDDiceResult*) roll;
-
 
 @end

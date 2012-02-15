@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol EDRandomNumberGeneratorDelegate <NSObject>
-
+@required
 - (NSInteger) generateRandomNumberFrom: (NSInteger)lowerBound to: (NSInteger) upperBound;
 
 @end
