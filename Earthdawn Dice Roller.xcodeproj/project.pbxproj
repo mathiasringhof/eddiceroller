@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5243DD0614EBADE200CD0176 /* EDRandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDRandomNumberGenerator.h; sourceTree = "<group>"; };
 		526A021F14EB98E400CCCE48 /* Earthdawn Dice Roller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Earthdawn Dice Roller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526A022314EB98E400CCCE48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		526A022514EB98E400CCCE48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +128,7 @@
 				526A025914EB98FD00CCCE48 /* EDDice.m */,
 				526A025B14EB99C500CCCE48 /* EDDiceResult.h */,
 				526A025C14EB99C500CCCE48 /* EDDiceResult.m */,
+				5243DD0614EBADE200CD0176 /* EDRandomNumberGenerator.h */,
 			);
 			path = "Earthdawn Dice Roller";
 			sourceTree = "<group>";
@@ -443,6 +445,7 @@
 				526A025414EB98E400CCCE48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		526A025514EB98E400CCCE48 /* Build configuration list for PBXNativeTarget "Earthdawn Dice RollerTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +454,7 @@
 				526A025714EB98E400CCCE48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

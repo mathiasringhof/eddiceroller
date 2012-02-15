@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EDRandomNumberGenerator.h"
 @class EDDiceResult;
 
 @interface EDDice : NSObject
 
 @property NSUInteger noOfSides;
+@property (strong, nonatomic) id<EDRandomNumberGeneratorDelegate> randomNumberGenerator;
 
 - (EDDice*) initWithNoOfSides: (NSUInteger) noOfSides;
 - (EDDiceResult*) roll;

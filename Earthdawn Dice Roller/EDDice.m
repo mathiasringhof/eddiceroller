@@ -11,7 +11,7 @@
 
 @implementation EDDice
 
-@synthesize noOfSides = _noOfSides;
+@synthesize noOfSides = _noOfSides, randomNumberGenerator = _randomNumberGenerator;
 
 - (EDDice*) initWithNoOfSides: (NSUInteger) noOfSides
 {
@@ -27,7 +27,11 @@
     NSUInteger resultValue;
     NSInteger randomValue;
     do {
-        randomValue = (arc4random() % self.noOfSides) + 1;
+        if (self.randomNumberGenerator) {
+            randomValue = [self.randomNumberGenerator generateRandomNumberFrom:1 to:self.noOfSides];
+        } else {
+            randomValue = (arc4random() % self.noOfSides) + 1;
+        }
         resultValue = resultValue + randomValue;
     } while (randomValue == self.noOfSides);
     return [[EDDiceResult alloc] initWithResultValue:resultValue fromDice:self];
