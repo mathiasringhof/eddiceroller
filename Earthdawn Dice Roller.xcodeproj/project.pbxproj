@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		526A022414EB98E400CCCE48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022314EB98E400CCCE48 /* UIKit.framework */; };
+		526A022614EB98E400CCCE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022514EB98E400CCCE48 /* Foundation.framework */; };
+		526A022814EB98E400CCCE48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022714EB98E400CCCE48 /* CoreGraphics.framework */; };
+		526A022E14EB98E400CCCE48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 526A022C14EB98E400CCCE48 /* InfoPlist.strings */; };
+		526A023014EB98E400CCCE48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A022F14EB98E400CCCE48 /* main.m */; };
+		526A023414EB98E400CCCE48 /* EDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A023314EB98E400CCCE48 /* EDAppDelegate.m */; };
+		526A023714EB98E400CCCE48 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526A023514EB98E400CCCE48 /* MainStoryboard.storyboard */; };
+		526A023A14EB98E400CCCE48 /* EDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A023914EB98E400CCCE48 /* EDViewController.m */; };
+		526A024214EB98E400CCCE48 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A024114EB98E400CCCE48 /* SenTestingKit.framework */; };
+		526A024314EB98E400CCCE48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022314EB98E400CCCE48 /* UIKit.framework */; };
+		526A024414EB98E400CCCE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022514EB98E400CCCE48 /* Foundation.framework */; };
+		526A024C14EB98E400CCCE48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 526A024A14EB98E400CCCE48 /* InfoPlist.strings */; };
+		526A024F14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A024E14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		526A024514EB98E400CCCE48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 526A021614EB98E400CCCE48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 526A021E14EB98E400CCCE48;
+			remoteInfo = "Earthdawn Dice Roller";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		526A021F14EB98E400CCCE48 /* Earthdawn Dice Roller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Earthdawn Dice Roller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		526A022314EB98E400CCCE48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		526A022514EB98E400CCCE48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		526A022714EB98E400CCCE48 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		526A022B14EB98E400CCCE48 /* Earthdawn Dice Roller-Info.plist */ = {isa = PBXFileReference; path = "Earthdawn Dice Roller-Info.plist"; sourceTree = "<group>"; };
+		526A022D14EB98E400CCCE48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		526A022F14EB98E400CCCE48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		526A023114EB98E400CCCE48 /* Earthdawn Dice Roller-Prefix.pch */ = {isa = PBXFileReference; path = "Earthdawn Dice Roller-Prefix.pch"; sourceTree = "<group>"; };
+		526A023214EB98E400CCCE48 /* EDAppDelegate.h */ = {isa = PBXFileReference; path = EDAppDelegate.h; sourceTree = "<group>"; };
+		526A023314EB98E400CCCE48 /* EDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDAppDelegate.m; sourceTree = "<group>"; };
+		526A023614EB98E400CCCE48 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		526A023814EB98E400CCCE48 /* EDViewController.h */ = {isa = PBXFileReference; path = EDViewController.h; sourceTree = "<group>"; };
+		526A023914EB98E400CCCE48 /* EDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDViewController.m; sourceTree = "<group>"; };
+		526A024014EB98E400CCCE48 /* Earthdawn Dice RollerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Earthdawn Dice RollerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		526A024114EB98E400CCCE48 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		526A024914EB98E400CCCE48 /* Earthdawn Dice RollerTests-Info.plist */ = {isa = PBXFileReference; path = "Earthdawn Dice RollerTests-Info.plist"; sourceTree = "<group>"; };
+		526A024B14EB98E400CCCE48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		526A024D14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.h */ = {isa = PBXFileReference; path = Earthdawn_Dice_RollerTests.h; sourceTree = "<group>"; };
+		526A024E14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Earthdawn_Dice_RollerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		526A021C14EB98E400CCCE48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526A022414EB98E400CCCE48 /* UIKit.framework in Frameworks */,
+				526A022614EB98E400CCCE48 /* Foundation.framework in Frameworks */,
+				526A022814EB98E400CCCE48 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526A023C14EB98E400CCCE48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526A024214EB98E400CCCE48 /* SenTestingKit.framework in Frameworks */,
+				526A024314EB98E400CCCE48 /* UIKit.framework in Frameworks */,
+				526A024414EB98E400CCCE48 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		526A021414EB98E400CCCE48 = {
+			isa = PBXGroup;
+			children = (
+				526A022914EB98E400CCCE48 /* Earthdawn Dice Roller */,
+				526A024714EB98E400CCCE48 /* Earthdawn Dice RollerTests */,
+				526A022214EB98E400CCCE48 /* Frameworks */,
+				526A022014EB98E400CCCE48 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		526A022014EB98E400CCCE48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				526A021F14EB98E400CCCE48 /* Earthdawn Dice Roller.app */,
+				526A024014EB98E400CCCE48 /* Earthdawn Dice RollerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		526A022214EB98E400CCCE48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				526A022314EB98E400CCCE48 /* UIKit.framework */,
+				526A022514EB98E400CCCE48 /* Foundation.framework */,
+				526A022714EB98E400CCCE48 /* CoreGraphics.framework */,
+				526A024114EB98E400CCCE48 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		526A022914EB98E400CCCE48 /* Earthdawn Dice Roller */ = {
+			isa = PBXGroup;
+			children = (
+				526A023214EB98E400CCCE48 /* EDAppDelegate.h */,
+				526A023314EB98E400CCCE48 /* EDAppDelegate.m */,
+				526A023514EB98E400CCCE48 /* MainStoryboard.storyboard */,
+				526A023814EB98E400CCCE48 /* EDViewController.h */,
+				526A023914EB98E400CCCE48 /* EDViewController.m */,
+				526A022A14EB98E400CCCE48 /* Supporting Files */,
+			);
+			path = "Earthdawn Dice Roller";
+			sourceTree = "<group>";
+		};
+		526A022A14EB98E400CCCE48 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				526A022B14EB98E400CCCE48 /* Earthdawn Dice Roller-Info.plist */,
+				526A022C14EB98E400CCCE48 /* InfoPlist.strings */,
+				526A022F14EB98E400CCCE48 /* main.m */,
+				526A023114EB98E400CCCE48 /* Earthdawn Dice Roller-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		526A024714EB98E400CCCE48 /* Earthdawn Dice RollerTests */ = {
+			isa = PBXGroup;
+			children = (
+				526A024D14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.h */,
+				526A024E14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m */,
+				526A024814EB98E400CCCE48 /* Supporting Files */,
+			);
+			path = "Earthdawn Dice RollerTests";
+			sourceTree = "<group>";
+		};
+		526A024814EB98E400CCCE48 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				526A024914EB98E400CCCE48 /* Earthdawn Dice RollerTests-Info.plist */,
+				526A024A14EB98E400CCCE48 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		526A021E14EB98E400CCCE48 /* Earthdawn Dice Roller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 526A025214EB98E400CCCE48 /* Build configuration list for PBXNativeTarget "Earthdawn Dice Roller" */;
+			buildPhases = (
+				526A021B14EB98E400CCCE48 /* Sources */,
+				526A021C14EB98E400CCCE48 /* Frameworks */,
+				526A021D14EB98E400CCCE48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Earthdawn Dice Roller";
+			productName = "Earthdawn Dice Roller";
+			productReference = 526A021F14EB98E400CCCE48 /* Earthdawn Dice Roller.app */;
+			productType = "com.apple.product-type.application";
+		};
+		526A023F14EB98E400CCCE48 /* Earthdawn Dice RollerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 526A025514EB98E400CCCE48 /* Build configuration list for PBXNativeTarget "Earthdawn Dice RollerTests" */;
+			buildPhases = (
+				526A023B14EB98E400CCCE48 /* Sources */,
+				526A023C14EB98E400CCCE48 /* Frameworks */,
+				526A023D14EB98E400CCCE48 /* Resources */,
+				526A023E14EB98E400CCCE48 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				526A024614EB98E400CCCE48 /* PBXTargetDependency */,
+			);
+			name = "Earthdawn Dice RollerTests";
+			productName = "Earthdawn Dice RollerTests";
+			productReference = 526A024014EB98E400CCCE48 /* Earthdawn Dice RollerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		526A021614EB98E400CCCE48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 526A021914EB98E400CCCE48 /* Build configuration list for PBXProject "Earthdawn Dice Roller" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 526A021414EB98E400CCCE48;
+			productRefGroup = 526A022014EB98E400CCCE48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				526A021E14EB98E400CCCE48 /* Earthdawn Dice Roller */,
+				526A023F14EB98E400CCCE48 /* Earthdawn Dice RollerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		526A021D14EB98E400CCCE48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526A022E14EB98E400CCCE48 /* InfoPlist.strings in Resources */,
+				526A023714EB98E400CCCE48 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526A023D14EB98E400CCCE48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526A024C14EB98E400CCCE48 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		526A023E14EB98E400CCCE48 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		526A021B14EB98E400CCCE48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526A023014EB98E400CCCE48 /* main.m in Sources */,
+				526A023414EB98E400CCCE48 /* EDAppDelegate.m in Sources */,
+				526A023A14EB98E400CCCE48 /* EDViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526A023B14EB98E400CCCE48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526A024F14EB98E400CCCE48 /* Earthdawn_Dice_RollerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		526A024614EB98E400CCCE48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 526A021E14EB98E400CCCE48 /* Earthdawn Dice Roller */;
+			targetProxy = 526A024514EB98E400CCCE48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		526A022C14EB98E400CCCE48 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				526A022D14EB98E400CCCE48 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		526A023514EB98E400CCCE48 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				526A023614EB98E400CCCE48 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		526A024A14EB98E400CCCE48 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				526A024B14EB98E400CCCE48 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		526A025014EB98E400CCCE48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		526A025114EB98E400CCCE48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		526A025314EB98E400CCCE48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Earthdawn Dice Roller/Earthdawn Dice Roller-Prefix.pch";
+				INFOPLIST_FILE = "Earthdawn Dice Roller/Earthdawn Dice Roller-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		526A025414EB98E400CCCE48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Earthdawn Dice Roller/Earthdawn Dice Roller-Prefix.pch";
+				INFOPLIST_FILE = "Earthdawn Dice Roller/Earthdawn Dice Roller-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		526A025614EB98E400CCCE48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Earthdawn Dice Roller.app/Earthdawn Dice Roller";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Earthdawn Dice Roller/Earthdawn Dice Roller-Prefix.pch";
+				INFOPLIST_FILE = "Earthdawn Dice RollerTests/Earthdawn Dice RollerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		526A025714EB98E400CCCE48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Earthdawn Dice Roller.app/Earthdawn Dice Roller";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Earthdawn Dice Roller/Earthdawn Dice Roller-Prefix.pch";
+				INFOPLIST_FILE = "Earthdawn Dice RollerTests/Earthdawn Dice RollerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		526A021914EB98E400CCCE48 /* Build configuration list for PBXProject "Earthdawn Dice Roller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526A025014EB98E400CCCE48 /* Debug */,
+				526A025114EB98E400CCCE48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		526A025214EB98E400CCCE48 /* Build configuration list for PBXNativeTarget "Earthdawn Dice Roller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526A025314EB98E400CCCE48 /* Debug */,
+				526A025414EB98E400CCCE48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		526A025514EB98E400CCCE48 /* Build configuration list for PBXNativeTarget "Earthdawn Dice RollerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526A025614EB98E400CCCE48 /* Debug */,
+				526A025714EB98E400CCCE48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 526A021614EB98E400CCCE48 /* Project object */;
+}
