@@ -20,6 +20,7 @@
     self = [super init];
     if (self) {
         self.resultValue = resultValue;
+        self.thrownDice = thrownDice;
     }
     return self;
 }

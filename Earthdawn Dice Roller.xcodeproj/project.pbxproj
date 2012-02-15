@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5243DD0B14EBB38800CD0176 /* EDDiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243DD0A14EBB38800CD0176 /* EDDiceTests.m */; };
+		5243DD1314EBD54900CD0176 /* EDDiceResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243DD1214EBD54900CD0176 /* EDDiceResultTests.m */; };
 		526A022414EB98E400CCCE48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022314EB98E400CCCE48 /* UIKit.framework */; };
 		526A022614EB98E400CCCE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022514EB98E400CCCE48 /* Foundation.framework */; };
 		526A022814EB98E400CCCE48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022714EB98E400CCCE48 /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 		5243DD0614EBADE200CD0176 /* EDRandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDRandomNumberGenerator.h; sourceTree = "<group>"; };
 		5243DD0914EBB38800CD0176 /* EDDiceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDiceTests.h; sourceTree = "<group>"; };
 		5243DD0A14EBB38800CD0176 /* EDDiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDDiceTests.m; sourceTree = "<group>"; };
+		5243DD1114EBD54900CD0176 /* EDDiceResultTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDiceResultTests.h; sourceTree = "<group>"; };
+		5243DD1214EBD54900CD0176 /* EDDiceResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDDiceResultTests.m; sourceTree = "<group>"; };
 		526A021F14EB98E400CCCE48 /* Earthdawn Dice Roller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Earthdawn Dice Roller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526A022314EB98E400CCCE48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		526A022514EB98E400CCCE48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -158,6 +161,8 @@
 				526A024814EB98E400CCCE48 /* Supporting Files */,
 				5243DD0914EBB38800CD0176 /* EDDiceTests.h */,
 				5243DD0A14EBB38800CD0176 /* EDDiceTests.m */,
+				5243DD1114EBD54900CD0176 /* EDDiceResultTests.h */,
+				5243DD1214EBD54900CD0176 /* EDDiceResultTests.m */,
 			);
 			path = "Earthdawn Dice RollerTests";
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5243DD0B14EBB38800CD0176 /* EDDiceTests.m in Sources */,
+				5243DD1314EBD54900CD0176 /* EDDiceResultTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
