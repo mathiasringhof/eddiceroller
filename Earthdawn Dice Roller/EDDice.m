@@ -7,6 +7,7 @@
 //
 
 #import "EDDice.h"
+#import "EDDiceResult.h"
 
 @implementation EDDice
 

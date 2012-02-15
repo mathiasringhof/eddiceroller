@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EDDice.h"
+@class EDDice;
 
 @interface EDDiceResult : NSObject
 
