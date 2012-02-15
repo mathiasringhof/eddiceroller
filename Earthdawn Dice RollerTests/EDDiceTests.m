@@ -9,55 +9,49 @@
 #import "EDDiceTests.h"
 
 typedef NSInteger (^RandomNumberBlock)();
+#define DICES_TO_TEST_FOR_AS_NUMBER_ARRAY [NSArray arrayWithObjects:[NSNumber numberWithInt:6], [NSNumber numberWithInt:8], [NSNumber numberWithInt:10], [NSNumber numberWithInt:12], [NSNumber numberWithInt:20], nil]
 
 @interface EDDiceTests()
 @property (strong, nonatomic) RandomNumberBlock block;
-@property (strong, nonatomic) EDDice* dice;
 @end
 
 @implementation EDDiceTests
 
-@synthesize dice = _dice;
 @synthesize block = _block;
 
 - (void)setUp
 {
     [super setUp];
-    self.dice = [[EDDice alloc] initWithNoOfSides:6];
-    self.dice.delegate = self;
 }
 
 - (void)tearDown
 {
     [super tearDown];
-    self.dice = nil;
 }
 
-- (void)testRollOneToFive
+- (void)testRoll
 {
-    for (NSInteger i = 1; i < 6; i++) {
-        self.block = ^{
-            return i;
-        };
-        EDDiceResult* result = [self.dice roll];
-        STAssertEquals(result.resultValue, i, @"Result does not match expected value");
-    }
-}
-
-- (void)testRollSixPlus
-{
-    __block BOOL returnedSix = NO;
-    self.block = ^{
-        if (returnedSix)
-            return 3;
-        else {
-            returnedSix = YES;
-            return 6;
+    for (NSNumber* diceSides in DICES_TO_TEST_FOR_AS_NUMBER_ARRAY) {
+        EDDice* dice = [[EDDice alloc] initWithNoOfSides:diceSides.intValue];
+        dice.delegate = self;
+        for (NSInteger i = 1; i < 50; i++) {
+            if ((i % diceSides.intValue) != 0) {     // do not assert for max values, e.g. D6 for 6, 12, ...
+                __block NSInteger timesBlockWasCalled = 0;
+                // define the block that delivers the "random" numbers to the dice
+                self.block = ^{
+                    if (i > diceSides.intValue) {
+                        // return max number for as many times as needed, e.g. for 7: 6 + 1
+                        return (i - (diceSides.intValue * timesBlockWasCalled));
+                    } else {
+                        return i;
+                    }
+                    timesBlockWasCalled++;
+                };
+                EDDiceResult* result = [dice roll];
+                STAssertEquals(result.resultValue, i, @"Result for D%d incorrect. Expected %d, dice rolled %d", dice.noOfSides, i, result.resultValue);
+            }
         }
-            
-    };
-    EDDiceResult* result = [self.dice roll];
-    STAssertEquals(result.resultValue, 9, @"Result does not match expected value");
+    }
 }
 
 - (NSInteger) generateRandomNumberFrom: (NSInteger)lowerBound to: (NSInteger) upperBound
