@@ -11,8 +11,22 @@
 
 @implementation EDDice
 
+#pragma mark Class methods
++ (EDDice*) diceWithNoOfSides: (NSInteger) noOfSides
+{
+    return [[EDDice alloc] initWithNoOfSides:noOfSides];
+}
+
++ (EDDice*) diceWithNoOfSides: (NSInteger) noOfSides 
+                      penalty: (NSInteger) penalty
+{
+    return [[EDDice alloc] initWithNoOfSides:noOfSides penalty:penalty];
+}
+
+#pragma mark Properties
 @synthesize noOfSides = _noOfSides, penalty = _penalty, delegate = _delegate;
 
+#pragma mark Constructors
 - (EDDice*) initWithNoOfSides: (NSInteger) noOfSides
 {
     self = [super init];
@@ -34,6 +48,7 @@
     return self;
 }
 
+#pragma mark Methods
 - (EDDiceResult*) roll
 {
     NSInteger resultValue = 0;

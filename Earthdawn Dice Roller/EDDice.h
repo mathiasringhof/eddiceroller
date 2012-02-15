@@ -12,6 +12,10 @@
 
 @interface EDDice : NSObject
 
++ (EDDice*) diceWithNoOfSides: (NSInteger) noOfSides;
++ (EDDice*) diceWithNoOfSides: (NSInteger) noOfSides 
+                      penalty: (NSInteger) penalty;
+
 @property NSInteger noOfSides;
 @property NSInteger penalty;
 @property (strong, nonatomic) id<EDRandomNumberGeneratorDelegate> delegate;
