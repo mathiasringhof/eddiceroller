@@ -64,18 +64,21 @@ typedef NSInteger (^RandomNumberBlock)();
     for (NSNumber* diceSides in DICES_TO_TEST_FOR_AS_NUMBER_ARRAY) {
         EDDice* dice = [[EDDice alloc] initWithNoOfSides:diceSides.intValue penalty:penalty];
         dice.delegate = self;
-        for (NSInteger i = 1; i < 50; i++) {
+        for (NSInteger i = 1; i < 100; i++) {
             if ((i % diceSides.intValue) != 0) {     // do not assert for max values, e.g. D6 for 6, 12, ...
                 __block NSInteger timesBlockWasCalled = 0;
                 // define the block that delivers the "random" numbers to the dice
                 self.block = ^{
+                    NSInteger result;
                     if (i > diceSides.intValue) {
                         // return max number for as many times as needed, e.g. for 7: 6 + 1
-                        return (i - (diceSides.intValue * timesBlockWasCalled));
+                        result = (i - (diceSides.intValue * timesBlockWasCalled));
+                        if (result > diceSides.intValue) result = diceSides.intValue;
                     } else {
-                        return i;
+                        result = i;
                     }
                     timesBlockWasCalled++;
+                    return result;
                 };
                 EDDiceResult* result = [dice roll];
                 NSInteger expected = i - penalty;

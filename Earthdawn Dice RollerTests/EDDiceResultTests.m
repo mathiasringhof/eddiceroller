@@ -18,7 +18,7 @@
     diceResult.resultValue = 7;
     STAssertTrue([diceResult.description isEqualToString:@"6 + 1"], @"DiceResult description %@ does not match expected value. ResultValue was %d", diceResult.description, diceResult.resultValue);
     diceResult.resultValue = 16;
-    STAssertTrue([diceResult.description isEqualToString:@"6 + 6 + 4"], @"DiceResult description %@ does not match expected value. ResultValue was %d", diceResult.description, diceResult.resultValue);    
+    STAssertTrue([diceResult.description isEqualToString:@"6 + 6 + 4"], @"DiceResult description %@ does not match expected value. ResultValue was %d", diceResult.description, diceResult.resultValue);
 }
 
 @end
