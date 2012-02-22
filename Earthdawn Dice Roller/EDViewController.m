@@ -8,6 +8,12 @@
 
 #import "EDViewController.h"
 
+@interface EDViewController()
+- (NSArray*) dicesForIndexPath: (NSIndexPath*)indexPath;
+- (NSInteger) stepNoForIndexPath: (NSIndexPath*)indexPath;
+
+@end
+
 @implementation EDViewController
 @synthesize stepTableView = _stepTableView;
 @synthesize resultLabel = _resultLabel, diceLookup = _diceLookup;
@@ -25,6 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.stepTableView.dataSource = self;
+    self.stepTableView.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -62,6 +69,8 @@
     return YES;
 }
 
+#pragma mark Actions
+
 - (IBAction)throwDiceButtonPressed:(id)sender {
     NSArray* dices = [self.diceLookup diceForStep:1];
     for (EDDice* dice in dices) {
@@ -90,9 +99,8 @@
     }
     
     // Configure the cell...
-    NSInteger stepNo = indexPath.row + 1;
-    NSArray* dices = [self.diceLookup diceForStep:stepNo];    
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", stepNo];
+    NSArray* dices = [self dicesForIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d", [self stepNoForIndexPath:indexPath]];
     NSMutableString* detailText = [[NSMutableString alloc] init];
     for (EDDice* dice in dices) {
         if (detailText.length == 0) {
@@ -101,8 +109,48 @@
             [detailText appendFormat:@" + %@", dice.description];
         }
     }
-    cell.detailTextLabel.text = detailText;
+    cell.detailTextLabel.text = [detailText copy];
     
     return cell;
 }
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray* dices = [self dicesForIndexPath:indexPath];
+    NSInteger result = 0;
+    NSMutableString* resultString = [[NSMutableString alloc] init];
+    for (EDDice* dice in dices) {
+        EDDiceResult* diceResult = [dice roll];
+        result = result + diceResult.resultValue;
+        if (resultString.length == 0) {
+            [resultString appendString:diceResult.description];
+        } else {
+            [resultString appendFormat:@" + %@", diceResult.description];
+        }
+    }
+    [self setResult:[NSString stringWithFormat:@"%@: %d", resultString, result]];
+    [self.stepTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Public methods
+- (void)setResult: (NSString*) result
+{
+    self.resultLabel.text = [NSString stringWithFormat:@"Result: %@", result];
+}
+
+#pragma mark - Private methods
+- (NSArray*) dicesForIndexPath: (NSIndexPath*)indexPath
+{
+    NSInteger stepNo = [self stepNoForIndexPath:indexPath];
+    NSArray* dices = [self.diceLookup diceForStep:stepNo];
+    return dices;
+}
+
+- (NSInteger) stepNoForIndexPath: (NSIndexPath*)indexPath
+{
+    NSInteger stepNo = indexPath.row + 1;
+    return stepNo;
+}
+
 @end

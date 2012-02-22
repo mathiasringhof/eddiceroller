@@ -11,9 +11,11 @@
 #import "EDDiceResult.h"
 #import "EDDice.h"
 
-@interface EDViewController : UIViewController <UITableViewDataSource>
+@interface EDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (strong, nonatomic) id<EDDiceLookup> diceLookup;
 @property (weak, nonatomic) IBOutlet UITableView *stepTableView;
+
+- (void)setResult: (NSString*) result;
 
 @end
