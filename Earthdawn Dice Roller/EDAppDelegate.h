@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EDViewController.h"
+#import "EDSimpleDiceLookup.h"
 
 @interface EDAppDelegate : UIResponder <UIApplicationDelegate>
 

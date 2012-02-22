@@ -11,9 +11,9 @@
 #import "EDDiceResult.h"
 #import "EDDice.h"
 
-@interface EDViewController : UIViewController
+@interface EDViewController : UIViewController <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (strong, nonatomic) id<EDDiceLookup> diceLookup;
+@property (weak, nonatomic) IBOutlet UITableView *stepTableView;
 
-- (IBAction)throwDiceButtonPressed:(id)sender;
 @end

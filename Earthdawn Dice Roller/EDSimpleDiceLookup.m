@@ -20,7 +20,7 @@
                             [NSArray arrayWithObject: [EDDice diceWithNoOfSides:6 penalty:2]], [NSNumber numberWithInt:2],                             
                             [NSArray arrayWithObject: [EDDice diceWithNoOfSides:6 penalty:1]], [NSNumber numberWithInt:3], 
                             [NSArray arrayWithObject: [EDDice diceWithNoOfSides:6 penalty:0]], [NSNumber numberWithInt:4],                             
-                            [NSArray arrayWithObject: [EDDice diceWithNoOfSides:6 penalty:0]], [NSNumber numberWithInt:5],                             
+                            [NSArray arrayWithObject: [EDDice diceWithNoOfSides:8 penalty:0]], [NSNumber numberWithInt:5],                             
                             nil];
     NSArray* dices = [lookup objectForKey: [NSNumber numberWithInt:step]];
     if (dices) {
@@ -33,6 +33,11 @@
 - (NSArray*) diceForStep: (NSInteger) step
 {
     return [self diceForStep:step withKarma:NO];
+}
+
+- (NSInteger) maxSupportedStep
+{
+    return 5;
 }
 
 @end

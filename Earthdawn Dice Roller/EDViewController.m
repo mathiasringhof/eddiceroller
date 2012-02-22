@@ -9,6 +9,7 @@
 #import "EDViewController.h"
 
 @implementation EDViewController
+@synthesize stepTableView = _stepTableView;
 @synthesize resultLabel = _resultLabel, diceLookup = _diceLookup;
 
 - (void)didReceiveMemoryWarning
@@ -23,11 +24,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.stepTableView.dataSource = self;
 }
 
 - (void)viewDidUnload
 {
     [self setResultLabel:nil];
+    [self setStepTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -64,5 +67,42 @@
     for (EDDice* dice in dices) {
         
     }
+}
+
+#pragma mark - UITableViewDatasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1; // always one section
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.diceLookup maxSupportedStep];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Step Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    // Configure the cell...
+    NSInteger stepNo = indexPath.row + 1;
+    NSArray* dices = [self.diceLookup diceForStep:stepNo];    
+    cell.textLabel.text = [NSString stringWithFormat:@"%d", stepNo];
+    NSMutableString* detailText = [[NSMutableString alloc] init];
+    for (EDDice* dice in dices) {
+        if (detailText.length == 0) {
+            [detailText appendString:dice.description];
+        } else {
+            [detailText appendFormat:@" + %@", dice.description];
+        }
+    }
+    cell.detailTextLabel.text = detailText;
+    
+    return cell;
 }
 @end

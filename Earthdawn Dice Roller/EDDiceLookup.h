@@ -14,5 +14,6 @@
 @required
 - (NSArray*) diceForStep: (NSInteger) step 
                withKarma: (BOOL) karma;
+- (NSInteger) maxSupportedStep;
 
 @end
