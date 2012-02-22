@@ -231,7 +231,7 @@
 		526A021614EB98E400CCCE48 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 526A021914EB98E400CCCE48 /* Build configuration list for PBXProject "Earthdawn Dice Roller" */;
 			compatibilityVersion = "Xcode 3.2";

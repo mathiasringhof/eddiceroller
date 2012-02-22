@@ -21,4 +21,12 @@
     STAssertTrue([diceResult.description isEqualToString:@"6 + 6 + 4"], @"DiceResult description %@ does not match expected value. ResultValue was %d", diceResult.description, diceResult.resultValue);
 }
 
+- (void)testDiceResultHardcodedWithPenalty
+{
+    EDDice* dice = [[EDDice alloc] initWithNoOfSides:6 penalty:3];
+    // a result of 6 for D6-3 is 6 + 3 thrown
+    EDDiceResult* diceResult = [[EDDiceResult alloc] initWithResultValue:6 fromDice:dice];
+    STAssertTrue([diceResult.description isEqualToString:@"6 + 3 - 3"], @"DiceResult description %@ does not match expected value. ResultValue was %d, dice was %@", diceResult.description, diceResult.resultValue, dice);
+}
+
 @end
