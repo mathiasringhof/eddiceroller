@@ -10,6 +10,7 @@
 
 typedef NSInteger (^RandomNumberBlock)();
 #define DICES_TO_TEST_FOR_AS_NUMBER_ARRAY [NSArray arrayWithObjects:[NSNumber numberWithInt:6], [NSNumber numberWithInt:8], [NSNumber numberWithInt:10], [NSNumber numberWithInt:12], [NSNumber numberWithInt:20], nil]
+//#define DICES_TO_TEST_FOR_AS_NUMBER_ARRAY [NSArray arrayWithObjects:[NSNumber numberWithInt:6], nil]
 #define MAX_PENALTY_TO_TEST_FOR 3
 
 @interface EDDiceTests()

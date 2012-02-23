@@ -11,12 +11,13 @@
 
 @interface EDDiceResult : NSObject
 
-@property NSInteger resultValue;
+@property NSArray* results;
 @property (strong, nonatomic) EDDice* thrownDice;
 
-- (EDDiceResult*) initWithResultValue: (NSInteger)resultValue 
-                             fromDice: (EDDice*) thrownDice;
+- (EDDiceResult*) initWithResults: (NSArray*) results 
+                         fromDice: (EDDice*) thrownDice;
 
 - (NSString*) description;
+- (NSInteger) resultValue;
 
 @end

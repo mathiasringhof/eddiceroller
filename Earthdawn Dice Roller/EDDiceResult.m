@@ -11,15 +11,15 @@
 
 @implementation EDDiceResult
 
-@synthesize resultValue = _resultValue, thrownDice = _thrownDice;
+@synthesize results = _results, thrownDice = _thrownDice;
 
 #pragma mark Constructor
-- (EDDiceResult*) initWithResultValue: (NSInteger)resultValue 
-                             fromDice: (EDDice*) thrownDice;
+- (EDDiceResult*) initWithResults: (NSArray*) results 
+                         fromDice: (EDDice*) thrownDice;
 {
     self = [super init];
     if (self) {
-        self.resultValue = resultValue;
+        self.results = results;
         self.thrownDice = thrownDice;
     }
     return self;
@@ -28,17 +28,24 @@
 #pragma mark Description
 - (NSString*) description
 {
-    if (self.resultValue > self.thrownDice.noOfSides) {
-        NSInteger divResult = self.resultValue / self.thrownDice.noOfSides;
-        NSMutableString* description = [[NSMutableString alloc] init];
-        for (NSInteger i = 0; i < divResult; i++) {
-            [description appendFormat:@"%d + ", self.thrownDice.noOfSides];
-        }
-        [description appendFormat:@"%d", self.resultValue - (self.thrownDice.noOfSides * divResult)];
-        return [description copy];
-    } else {
-        return [NSString stringWithFormat:@"%d", self.resultValue];
+    NSMutableString* returnValue = [[NSMutableString alloc] init];
+    for (NSNumber* result in self.results) {
+        if (returnValue.length != 0) [returnValue appendString:@" + "];
+        [returnValue appendFormat:@"%d", result.intValue];
     }
+    if (self.thrownDice.penalty > 0) [returnValue appendFormat:@" - %d", self.thrownDice.penalty];
+    return [returnValue copy];
+}
+
+- (NSInteger) resultValue
+{
+    NSInteger returnValue = 0;
+    for (NSNumber* result in self.results) {
+        returnValue += result.intValue;
+    }
+    returnValue -= self.thrownDice.penalty;
+    if (returnValue < 1) returnValue = 1;
+    return returnValue;
 }
 
 @end

@@ -51,19 +51,17 @@
 #pragma mark Methods
 - (EDDiceResult*) roll
 {
-    NSInteger resultValue = 0;
     NSInteger randomValue = 0;
+    NSMutableArray* results = [[NSMutableArray alloc] init];
     do {
         if (self.delegate) {
             randomValue = [self.delegate generateRandomNumberFrom:1 to:self.noOfSides];
         } else {
             randomValue = (arc4random() % self.noOfSides) + 1;
         }
-        resultValue = resultValue + randomValue;
+        [results addObject:[NSNumber numberWithInt:randomValue]];
     } while (randomValue == self.noOfSides);
-    resultValue = resultValue - self.penalty;
-    if (resultValue < 1) resultValue = 1;
-    return [[EDDiceResult alloc] initWithResultValue:resultValue fromDice:self];
+    return [[EDDiceResult alloc] initWithResults: results fromDice:self];
 }
 
 - (NSString*) description
