@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (strong, nonatomic) id<EDDiceLookup> diceLookup;
 @property (weak, nonatomic) IBOutlet UITableView *stepTableView;
+@property (weak, nonatomic) IBOutlet UITableView *stepWithKarmaTableView;
 
 - (void)setResult: (NSString*) result;
 
