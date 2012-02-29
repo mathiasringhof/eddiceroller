@@ -9,7 +9,8 @@
 #import "EDViewController.h"
 
 @interface EDViewController()
-- (NSArray*) dicesForIndexPath: (NSIndexPath*)indexPath;
+- (NSArray*) dicesForIndexPath: (NSIndexPath*)indexPath 
+                     tableView: (UITableView*)tableView;
 - (NSInteger) stepNoForIndexPath: (NSIndexPath*)indexPath;
 
 @end
@@ -67,15 +68,6 @@
 {
     // Return YES for supported orientations
     return YES;
-}
-
-#pragma mark Actions
-
-- (IBAction)throwDiceButtonPressed:(id)sender {
-    NSArray* dices = [self.diceLookup diceForStep:1];
-    for (EDDice* dice in dices) {
-        
-    }
 }
 
 #pragma mark - UITableViewDatasource
@@ -139,7 +131,7 @@
         }
     }
     [self setResult:[NSString stringWithFormat:@"%@: %d", resultString, result]];
-    [self.stepTableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Public methods
