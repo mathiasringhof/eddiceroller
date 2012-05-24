@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "EDRandomNumberGenerator.h"
-@class EDDiceResult;
+#import "EDDiceResult.h"
+//@class EDDiceResult;
 
 @interface EDDice : NSObject
 

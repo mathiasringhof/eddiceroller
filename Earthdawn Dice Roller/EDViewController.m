@@ -7,17 +7,17 @@
 //
 
 #import "EDViewController.h"
+#import "EDDiceResult.h"
+#import "EDDice.h"
+#import "EDDiceCell.h"
 
 @interface EDViewController()
-- (NSArray*) dicesForIndexPath: (NSIndexPath*)indexPath 
-                     tableView: (UITableView*)tableView;
 - (NSInteger) stepNoForIndexPath: (NSIndexPath*)indexPath;
-
 @end
 
 @implementation EDViewController
+@synthesize resultDetailLabel = _resultDetailLabel;
 @synthesize stepTableView = _stepTableView;
-@synthesize stepWithKarmaTableView = _stepWithKarmaTableView;
 @synthesize resultLabel = _resultLabel, diceLookup = _diceLookup;
 
 - (void)didReceiveMemoryWarning
@@ -38,7 +38,7 @@
 {
     [self setResultLabel:nil];
     [self setStepTableView:nil];
-    [self setStepWithKarmaTableView:nil];
+    [self setResultDetailLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -83,34 +83,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifierStep = @"Step Cell";
-    static NSString* CellIdentifierKarma = @"Karma Step Cell";
-    
-    NSString* cellIdentifier;
-    
-    if (tableView == self.stepTableView)
-        cellIdentifier = CellIdentifierStep;
-    else {
-        cellIdentifier = CellIdentifierKarma;
-    }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"Dice Cell";
+        
+    EDDiceCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[EDDiceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    // Configure the cell...
-    NSArray* dices = [self dicesForIndexPath:indexPath tableView:tableView];
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", [self stepNoForIndexPath:indexPath]];
-    NSMutableString* detailText = [[NSMutableString alloc] init];
-    for (EDDice* dice in dices) {
-        if (detailText.length == 0) {
-            [detailText appendString:dice.description];
-        } else {
-            [detailText appendFormat:@" + %@", dice.description];
-        }
-    }
-    cell.detailTextLabel.text = [detailText copy];
+    NSInteger step = [self stepNoForIndexPath:indexPath];
+    [cell setStep:step
+            dices:[self.diceLookup diceForStep:step withKarma:NO]];
+    cell.karmaButton.tag = step;
     
     return cell;
 }
@@ -118,40 +101,40 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray* dices = [self dicesForIndexPath:indexPath tableView:tableView];
-    NSInteger result = 0;
-    NSMutableString* resultString = [[NSMutableString alloc] init];
-    for (EDDice* dice in dices) {
-        EDDiceResult* diceResult = [dice roll];
-        result = result + diceResult.resultValue;
-        if (resultString.length == 0) {
-            [resultString appendString:diceResult.description];
-        } else {
-            [resultString appendFormat:@" + %@", diceResult.description];
-        }
-    }
-    [self setResult:[NSString stringWithFormat:@"%@: %d", resultString, result]];
+    NSArray* dices = [self.diceLookup diceForStep:[self stepNoForIndexPath:indexPath]];
+    [self rollDices:dices];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Public methods
-- (void)setResult: (NSString*) result
-{
-    self.resultLabel.text = [NSString stringWithFormat:@"Result: %@", result];
+- (IBAction)karmaButtonUsed:(UIButton *)sender {
+    NSArray* dices = [self.diceLookup diceForStep:sender.tag withKarma:YES];
+    [self rollDices:dices];
 }
 
 #pragma mark - Private methods
-- (NSArray*) dicesForIndexPath: (NSIndexPath*)indexPath tableView: (UITableView*)tableView
-{
-    NSInteger stepNo = [self stepNoForIndexPath:indexPath];
-    NSArray* dices = [self.diceLookup diceForStep:stepNo withKarma:(tableView == self.stepWithKarmaTableView)];
-    return dices;
-}
-
 - (NSInteger) stepNoForIndexPath: (NSIndexPath*)indexPath
 {
     NSInteger stepNo = indexPath.row + 1;
     return stepNo;
+}
+
+- (void) rollDices: (NSArray*)dices
+{
+    NSInteger result = 0;
+    NSMutableString* resultString = [NSMutableString stringWithString:@"("];
+    for (EDDice* dice in dices) {
+        EDDiceResult* diceResult = [dice roll];
+        result = result + diceResult.resultValue;
+        if (resultString.length == 1) {
+            [resultString appendString:diceResult.description];
+        } else {
+            [resultString appendFormat:@") + (%@", diceResult.description];
+        }
+    }
+    [resultString appendString:@")"];
+    self.resultLabel.text = [NSString stringWithFormat:@"%d", result];
+    self.resultDetailLabel.text = resultString;
 }
 
 @end

@@ -15,8 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    UINavigationController* rootController = (UINavigationController*) self.window.rootViewController;
-    EDViewController* controller = (EDViewController*) rootController.topViewController;
+    EDViewController* controller = (EDViewController*) self.window.rootViewController;
     EDSimpleDiceLookup* diceLookup = [[EDSimpleDiceLookup alloc] init];
     controller.diceLookup = diceLookup;
     return YES;

@@ -11,6 +11,7 @@
 		5243DD0B14EBB38800CD0176 /* EDDiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243DD0A14EBB38800CD0176 /* EDDiceTests.m */; };
 		5243DD1314EBD54900CD0176 /* EDDiceResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243DD1214EBD54900CD0176 /* EDDiceResultTests.m */; };
 		5243DD1714EBE5EB00CD0176 /* EDSimpleDiceLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243DD1614EBE5EB00CD0176 /* EDSimpleDiceLookup.m */; };
+		5250BC5C156E86A100B00DB9 /* EDDiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250BC5B156E86A100B00DB9 /* EDDiceCell.m */; };
 		526A022414EB98E400CCCE48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022314EB98E400CCCE48 /* UIKit.framework */; };
 		526A022614EB98E400CCCE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022514EB98E400CCCE48 /* Foundation.framework */; };
 		526A022814EB98E400CCCE48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526A022714EB98E400CCCE48 /* CoreGraphics.framework */; };
@@ -47,6 +48,8 @@
 		5243DD1414EBE59400CD0176 /* EDDiceLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDiceLookup.h; sourceTree = "<group>"; };
 		5243DD1514EBE5EB00CD0176 /* EDSimpleDiceLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDSimpleDiceLookup.h; sourceTree = "<group>"; };
 		5243DD1614EBE5EB00CD0176 /* EDSimpleDiceLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDSimpleDiceLookup.m; sourceTree = "<group>"; };
+		5250BC5A156E86A100B00DB9 /* EDDiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDDiceCell.h; sourceTree = "<group>"; };
+		5250BC5B156E86A100B00DB9 /* EDDiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDDiceCell.m; sourceTree = "<group>"; };
 		526A021F14EB98E400CCCE48 /* Earthdawn Dice Roller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Earthdawn Dice Roller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526A022314EB98E400CCCE48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		526A022514EB98E400CCCE48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,8 @@
 		526A022914EB98E400CCCE48 /* Earthdawn Dice Roller */ = {
 			isa = PBXGroup;
 			children = (
+				5250BC5A156E86A100B00DB9 /* EDDiceCell.h */,
+				5250BC5B156E86A100B00DB9 /* EDDiceCell.m */,
 				526A023214EB98E400CCCE48 /* EDAppDelegate.h */,
 				526A023314EB98E400CCCE48 /* EDAppDelegate.m */,
 				526A023514EB98E400CCCE48 /* MainStoryboard.storyboard */,
@@ -299,6 +304,7 @@
 				526A025A14EB98FD00CCCE48 /* EDDice.m in Sources */,
 				526A025D14EB99C500CCCE48 /* EDDiceResult.m in Sources */,
 				5243DD1714EBE5EB00CD0176 /* EDSimpleDiceLookup.m in Sources */,
+				5250BC5C156E86A100B00DB9 /* EDDiceCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +387,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -390,6 +396,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
